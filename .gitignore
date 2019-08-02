@@ -1,0 +1,8 @@
+.DS_Store
+*.out
+*.log
+*.txt
+broker_trace.txt
+.vscode
+simA
+simB
