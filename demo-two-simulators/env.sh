@@ -1,6 +1,7 @@
 #!/bin/sh
 
-export FNCS_INSTALL="$HOME/FNCS-install"
+# 安装路径
+export FNCS_INSTALL="$HOME/code/FNCS-install"
 
 # update LD_LIBRARY_PATH for all but MCR
 if test "x$LD_LIBRARY_PATH" = x
