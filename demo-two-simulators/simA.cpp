@@ -3,6 +3,7 @@
 
 /* FNCS headers */
 #include <fncs.hpp>
+#include <string>
 
 using namespace std; /* C++ standard namespace */
 
@@ -32,7 +33,7 @@ static void generic_simulator()
         /* do useful work; check for incoming messages to the objects we
          * registered earlier */
         cout << "SimA: Working. Time is " << time_current << endl;
-        fncs::publish("object.attribute", "value");
+        fncs::publish("object.attribute", std::to_string(time_current));
         fncs::publish("this.will.be.dropped", "value");
         fncs::route("endpointX", "endpointY", "key", "value");
 
@@ -51,7 +52,7 @@ static void generic_simulator()
         /* Which time step do we wish to go to next? This does not
          * necessarily need to be a delta of 1; FNCS supports
          * arbitrary time deltas. */
-        time_desired = time_current + 1;
+        time_desired = time_current + 2;
 
         /* Synchronization by requesting the next time step. The next
          * time could very well be smaller than this simulator is able
